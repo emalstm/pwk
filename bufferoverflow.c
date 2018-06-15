@@ -1,6 +1,8 @@
 #include <string.h>
 #include <stdio.h>
 
+//https://payatu.com/understanding-stack-based-buffer-overflow/
+
 void function2() {
 printf("flow changed\n");
 }
