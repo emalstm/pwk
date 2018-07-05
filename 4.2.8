@@ -1,0 +1,17 @@
+4.2.8 Exercises - Nmap
+
+
+#1. ping sweep my target range
+nmap -v -sn 10.11.1.1-254 -oG 4.2.8-1-exercise
+
+#1. grep and save the ip addresses
+grep Up 4.2.6-firstexercise | cut -d' ' -f2 > hostsup.txt
+
+#2. scan the found ip addresses for web ports and os versions
+for ip in $(cat hostsup.txt); do nmap -A -p 80,443 $ip; done
+
+
+#3. perform smb os disc scan on all enumerated servers
+for ip in $(cat hostsup.txt); do nmap $ip --script smb-os-discovery.nse; done
+
+#4. Exploration exercise, not very easy to show. But I like -iL option *(read from file), -A and -O options. And the immense traffic of nmap is not only a network concern, but also a time concern since standalone nmap is serial, not parallel.
